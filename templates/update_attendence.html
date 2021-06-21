@@ -1,0 +1,200 @@
+{% extends 'home.html' %}
+
+
+{% block style %}
+<style>
+.kk{
+width:50%;
+margin-left:auto;
+margin-right:auto;
+margin-bottom:300px;
+
+border:1px ridge;
+
+}
+
+.ml{
+font-size:25px;
+margin-left:20%;
+
+
+}
+.mll{
+
+font-size:25px;
+margin-left:30%;
+
+}
+p{
+margin-top:20px;
+margin-left:15%;
+
+}
+
+.flsh{
+margin-left:auto;
+margin-right:auto;
+width:30%;
+margin-top:50px;
+}
+.fl{
+font-size:25px;
+color:red;
+
+
+}
+
+</style>
+
+{% endblock %}
+
+{% block menu %}
+            <div id="hmenu">
+              <ul>
+                <li>
+                  <a href="{{url_for('home_menu_teacher')}}">Home</a>
+                </li>
+                   <li>
+                  <a href="#">Update Attendence</a>
+                </li>
+                 <li>
+                  <a href='#'></a>
+                </li>
+                   <li>
+                  <a href='#'></a>
+                </li>
+                   <li>
+                   <a href="{{url_for('logout_teacher')}}">Logout</a>
+                </li>
+
+
+              </ul>
+            </div>
+{% endblock %}
+
+{% block content %}
+
+  {% with keek = get_flashed_messages(with_categories=true) %}
+     {% if keek %}
+     {% for category,item in keek %}
+
+    <div class="flsh" ><label class="fl">{{item}}</label></div>
+     {% endfor %}
+    {% endif %}
+{% endwith %}
+<div class="kk">
+
+ <h1 style="font-size:40px;margin-top:50px;text-align:center">Update Attendence </h1>
+    <div style="margin-top:40px;">
+
+        <form action="{{url_for('update_attendence')}}" method="post">
+
+
+
+            <label class="ml" for="subj">SUBJECT NAME :</label>
+            <input list="sn" id="subj"  name="subn" required>
+            <datalist id="sn">
+                <option value="PYTHON">
+                <option value="JAVA">
+                <option value="JAVASCRIPT">
+                <option value="C++">
+            </datalist>  <br/>
+
+            <div style="margin-top:50px;">
+                <label class="mll" for="date">Date  :</label>
+                <input type="date" name="date" id="date" required>
+
+             </div>
+
+<div style="margin-top:100px;margin-left:20%;">
+            <p class="para">
+                <label for="b1">100 :</label>
+                <input list="b11" id="b1" name="s0" required />
+                <datalist id="b11">
+                <option value="P">
+                <option value="A">
+                </datalist>
+            </p>
+            <p>
+                <label for="b2">101 :</label>
+                <input list="b22" id="b2" name="s1" required />
+                <datalist id="b22">
+                <option value="P">
+                <option value="A">
+                </datalist>
+            </p>
+            <p>
+                <label for="b3">102 :</label>
+                <input list="b33" id="b3" name="s2"  required/>
+                <datalist id="b33">
+                <option value="P">
+                <option value="A">
+                </datalist>
+            </p>
+
+            <p>
+                <label for="s3">103 :</label>
+                <input list="st3" id="s3" name="s3" required />
+                <datalist id="st3">
+                <option value="P">
+                <option value="A">
+                </datalist>
+            </p>
+
+            <p>
+                <label for="s4">104 :</label>
+                <input list="st4" id="s4" name="s4" required />
+                <datalist id="st4">
+                <option value="P">
+                <option value="A">
+                </datalist>
+            </p>
+            <p>
+                <label for="b6">105 :</label>
+                <input list="b66" id="b6" name="s5"  required/>
+                <datalist id="b66">
+                <option value="P">
+                <option value="A">
+                </datalist>
+            </p>
+
+            <p>
+                <label for="s6">106 :</label>
+                <input list="st6" id="s6" name="s6" required />
+                <datalist id="st6">
+                <option value="P">
+                <option value="A">
+                </datalist>
+            </p>
+            <p>
+                <label for="b8">107 :</label>
+                <input list="b88" id="b8" name="s7" required  />
+                <datalist id="b88">
+                <option value="P">
+                <option value="A">
+                </datalist>
+            </p>
+            <p>
+                <label for="b9">108 :</label>
+                <input list="b99" id="b9" name="s8" required />
+                <datalist id="b99">
+                <option value="P">
+                <option value="A">
+                </datalist>
+            </p>
+            <p>
+                <label for="b10">109 :</label>
+                <input list="b110" id="b10" name="s9" required/>
+                <datalist id="b110">
+                <option value="P">
+                <option value="A">
+                </datalist>
+            </p>
+    </div>
+
+             <input type="submit" class="button medium style1 pie mb-20" style="margin-top:50px;margin-left:35%; width:30%;margin-bottom:50px;" value="SUBMIT" />
+        </form>
+        </div>
+</div>
+
+{% endblock %}

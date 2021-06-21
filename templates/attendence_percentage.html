@@ -1,0 +1,124 @@
+{% extends 'home.html' %}
+{% block style %}
+<style>
+
+    table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+div {
+margin-left:auto:
+margin-right:auto;
+
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+.footy{
+
+margin:100px;
+}
+</style>
+
+{% endblock %}
+
+{% block menu %}
+
+  <div id="hmenu">
+              <ul>
+                <li>
+            <a href="{{url_for('home_menu')}}">Home</a>
+                </li>
+                <li>
+                  <a href="#"></a>
+                </li>
+                   <li>
+                  <a href="#"></a>
+                </li>
+                <li>
+                  <a href="#"></a>
+                </li>
+
+                <li >
+                   <a href="{{url_for('logout')}}">Logout</a>
+                </li>
+
+              </ul>
+
+      {% endblock %}
+
+
+{% block content %}
+<h1 style="font-size:40px;margin-top:60px;margin-left:40%;">{{subject_name}}</h1>
+<div style="margin-top:20px;">
+    <table style="overflow-x:auto;">
+       
+        <tr>
+        <th>Student_id</th>
+        <th>subject_code</th>
+        <th>Number of classes conducted</th>
+        <th>Number of classes attended</th>
+        <th>Percentage</th>
+        </tr>
+        {% for i in data %}
+        <tr>
+            <td>{{i[0]}}</td>
+            <td>{{i[1]}}</td>
+            <td>{{i[2]}}</td>
+            <td>{{i[3]}}</td>
+            <td>{{i[4]}}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+    <div>
+        <form action="{{url_for('attendence_details')}}" method="post">
+
+            <input type="submit" class="button medium style1 pie" value="click here for more info" style="margin-left:43%;margin-top:20px;">
+        </form>
+    </div>
+</div>
+
+{% endblock %}
+
+      {% block footer %}
+<footer id="footer" style="margin-top:150px;" >
+      <div class="bg"></div>
+      <div class="content">
+        <div class="group">
+        </div>
+        <div class="clear"></div>
+        <div class="baseline">
+
+          <ul class="social-links" style="float:right">
+            <li>
+              <a href="#" rel="nofollow" style="background-image:url('static/images/facebook.png')" title="Be a fan on Facebook"></a>
+            </li>
+            <li>
+              <a href="#" rel="nofollow" style="background-image:url('static/images/twitter.png')" title="Follow us on Twitter"></a>
+            </li>
+            <li>
+              <a href="#" style="background-image:url('static/images/googleplus.png')" title="Circle us on Google+"></a>
+            </li>
+            <li>
+              <a href="#" rel="nofollow" style="background-image:url('static/images/rss.png')" title="RSS Feed"></a>
+            </li>
+          </ul>
+          <div class="clear"></div>
+        </div>
+      </div>
+    </footer>
+
+{% endblock %}
+
+
+
+
+

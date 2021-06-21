@@ -1,0 +1,67 @@
+{% extends "login.html" %}
+{% block title %} <title>Forgot password</title> {% endblock %}
+
+{% block content %}
+<style>
+.flsh{
+	color:red;
+	position:absolute;
+	left:25%;
+	font-size:18px;
+	margin-top:15px;
+
+	}
+	</style>
+
+<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-form-title" style="background-image: url(static/images/bg.jpg);">
+					<span class="login100-form-title-1">
+						Sign In
+					</span>
+				</div>
+				{% with keek = get_flashed_messages(with_categories=true) %}
+                 {% if keek %}
+                {% for category,item in keek %}
+
+				<div class="{{category}}"><lable class="flsh">{{item}}</lable></div>
+              {% endfor %}
+              {% endif %}
+              {% endwith %}
+
+				<form action="{{url_for('update_password_teacher')}}" method="post" class="login100-form validate-form">
+					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
+						<span class="label-input100">Teacher ID</span>
+						<input class="input100" type="text" name="teacher_id1" placeholder="Enter Teacher ID">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
+						<span class="label-input100">  Password</span>
+						<input class="input100" type="password" name="password1" placeholder="New password">
+						<span class="focus-input100"></span>
+					</div>
+
+                    <div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
+						<span class="label-input100">  Password</span>
+						<input class="input100" type="password" name="password11" placeholder="Confirm password">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<button type="submit" class="login100-form-btn">
+							Update
+						</button>
+					</div>
+					<a href="{{url_for('login_teacher')}}" style="margin-top:15px" >
+								Login as <span style="font-weight:30px;font-size:20px;color:black;">Teacher?</span>
+							</a>
+
+				</form>
+
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

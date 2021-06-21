@@ -1,0 +1,111 @@
+{% extends 'home.html' %}
+{% block style %}
+<style>
+        table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 80%;
+  margin-left:10%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+.lbl{
+font-size:20px;
+margin-left:40%;
+}
+</style>
+
+{% endblock %}
+
+
+{% block menu %}
+
+  <div id="hmenu">
+              <ul>
+                <li>
+            <a href="{{url_for('home_menu')}}">Home</a>
+                </li>
+                   <li>
+                  <a href="#"></a>
+                </li>
+
+                <li>
+                  <a href="#"></a>
+                </li>
+                <li>
+                  <a href="#"></a>
+                </li>
+
+                <li >
+                   <a href="{{url_for('logout')}}">Logout</a>
+                </li>
+
+              </ul>
+
+      {% endblock %}
+
+
+
+{% block content %}
+<div style="margin-top:100px; width:100%;">
+<label class="lbl">STUDENT ID: {{Student_ID}}</label><br/>
+<label class="lbl">SUBJECT CODE: {{Subject_Code}}</label></br>
+
+<table style="overflow-x:auto;width:80%;">
+
+    <tr>
+        <th>Date</th>
+        <th>Status</th>
+    </tr>
+
+    {% for date,status in empty_dict.items() %}
+    <tr>
+        <td>{{date}}</td>
+        <td>{{status}}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+<footer id="footer" style="margin-top:150px;" >
+      <div class="bg"></div>
+      <div class="content">
+        <div class="group">
+
+
+        </div>
+        <div class="clear"></div>
+        <div class="baseline">
+          <ul class="social-links" style="float:right">
+            <li>
+              <a href="#" rel="nofollow" style="background-image:url('static/images/facebook.png')" title="Be a fan on Facebook"></a>
+            </li>
+            <li>
+              <a href="#" rel="nofollow" style="background-image:url('static/images/twitter.png')" title="Follow us on Twitter"></a>
+            </li>
+            <li>
+              <a href="#" style="background-image:url('static/images/googleplus.png')" title="Circle us on Google+"></a>
+            </li>
+            <li>
+              <a href="#" rel="nofollow" style="background-image:url('static/images/rss.png')" title="RSS Feed"></a>
+            </li>
+          </ul>
+          <div class="clear"></div>
+        </div>
+      </div>
+    </footer>
+
+{% endblock %}
+
+

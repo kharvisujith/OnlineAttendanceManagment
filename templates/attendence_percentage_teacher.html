@@ -1,0 +1,116 @@
+{% extends 'home_teacher.html' %}
+{% block style %}
+
+<style>
+    table {
+  border-collapse: collapse;
+  border-spacing: 0;
+   width: 80%;
+  margin-left:10%;
+  margin-top:30px;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+</style>
+{% endblock %}
+
+{% block menu %}
+            <div id="hmenu">
+              <ul>
+                <li>
+                  <a href="{{url_for('home_menu_teacher')}}">Home</a>
+                </li>
+                   <li>
+                  <a href="{{url_for('up_attendance')}}">Update Attendence</a>
+                </li>
+                 <li>
+                  <a href='#'></a>
+                </li>
+                   <li>
+                  <a href='#'></a>
+                </li>
+                   <li>
+                   <a href="{{url_for('logout_teacher')}}">Logout</a>
+                </li>
+
+
+              </ul>
+            </div>
+{% endblock %}
+
+
+{% block content %}
+<h1 style="font-size:30px;margin-top:60px;margin-left:37%">Subject Code : {{subject_code}}</h1>
+<div>
+    <table style="overflow-x:auto;">
+        <tr>
+        <th>Student_id</th>
+        <th>Number of classes conducted</th>
+        <th>Number of classes attended</th>
+        <th>Percentage</th>
+        </tr>
+        {% for i in data %}
+        <tr>
+            <td>{{i[0]}}</td>
+
+            <td>{{i[2]}}</td>
+            <td>{{i[3]}}</td>
+            <td>{{i[4]}}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+</div>
+
+
+ <div style="width:60%;margin-left:20%;margin-top:100px;">
+        <form action="{{url_for('attendence_details_teacher') }}", method="post">
+            <u><h1 style="font-size:25px;margin-left:15%;">Enter student ID to check individual attendence</h1></u><br/>
+
+            <lable style="margin-left:25%">STUDENT ID:</lable> <input type="text" name="stud_id" placeholder="Student ID"   required><br/>
+
+             <input type="submit" class="button medium style1 pie" value="Submit"  style="margin-left:36%;margin-top:20px;" />
+        </form>
+ </div>
+
+
+{% endblock %}
+
+
+{% block footer %}
+<footer id="footer" style="margin-top:150px;" >
+      <div class="bg"></div>
+      <div class="content">
+        <div class="clear"></div>
+        <div class="baseline">
+
+          <ul class="social-links" style="float:right">
+            <li>
+              <a href="#" rel="nofollow" style="background-image:url('static/images/facebook.png')" title="Be a fan on Facebook"></a>
+            </li>
+            <li>
+              <a href="#" rel="nofollow" style="background-image:url('static/images/twitter.png')" title="Follow us on Twitter"></a>
+            </li>
+            <li>
+              <a href="#" style="background-image:url('static/images/googleplus.png')" title="Circle us on Google+"></a>
+            </li>
+            <li>
+              <a href="#" rel="nofollow" style="background-image:url('static/images/rss.png')" title="RSS Feed"></a>
+            </li>
+          </ul>
+          <div class="clear"></div>
+        </div>
+      </div>
+    </footer>
+
+
+
+{% endblock %}

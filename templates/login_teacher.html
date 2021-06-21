@@ -1,0 +1,69 @@
+{% extends "login.html" %}
+{% block title %} <title>Login  </title> {% endblock %}
+
+{% block content %}
+
+<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-form-title" style="background-image: url(static/images/bg.jpg);">
+					<span class="login100-form-title-1">
+						Sign In
+					</span>
+				</div>
+				{% with keek = get_flashed_messages(with_categories=true) %}
+                 {% if keek %}
+                {% for category,item in keek %}
+
+				<div class="{{category}}"><lable class="flsh">{{item}}</lable></div>
+              {% endfor %}
+              {% endif %}
+              {% endwith %}
+
+				<form action="{{url_for('home_teacher')}}" method="post" class="login100-form validate-form">
+					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
+						<span class="label-input100">Teacher ID</span>
+						<input class="input100" type="text" name="teacher_id" placeholder="Enter teacher ID">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
+						<span class="label-input100">Password</span>
+						<input class="input100" type="password" name="teacher_password" placeholder="Enter password">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="flex-sb-m w-full p-b-30">
+						<div class="contact100-form-checkbox">
+							<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+							<label class="label-checkbox100" for="ckb1">
+								Remember me
+							</label>
+						</div>
+
+						<div>
+							<a href="{{url_for('forgot_password_teacher')}}" class="txt1">
+								Forgot Password?
+							</a>
+
+						</div>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn" type="submit">
+							Login
+						</button>
+					</div>
+					<a href="{{url_for('login')}}" style="margin-top:15px" >
+								Login as <span style="font-weight:30px;font-size:20px;color:black;">Student?</span>
+							</a>
+
+				</form>
+
+			</div>
+		</div>
+	</div>
+
+
+
+{% endblock %}

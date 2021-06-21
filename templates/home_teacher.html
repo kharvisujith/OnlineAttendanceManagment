@@ -1,0 +1,86 @@
+{% extends 'home.html' %}
+
+
+{% block menu %}
+            <div id="hmenu">
+              <ul>
+                <li>
+                  <a href="#">Home</a>
+                </li>
+
+                   <li>
+                  <a href="{{url_for('up_attendance')}}">Update Attendence</a>
+                </li>
+                 <li>
+                  <a href='#'></a>
+                </li>
+                   <li>
+                  <a href='#'></a>
+                </li>
+                   <li>
+                   <a href="{{url_for('logout_teacher')}}">Logout</a>
+                </li>
+
+
+              </ul>
+            </div>
+{% endblock %}
+
+{% block content %}
+    <div id="wrapper">
+      <div class="bg"></div>
+      <div class="row">
+        <div id="container">
+          <div id="page" class="home">
+            <div id="main">
+              <section class="home">
+                <div class="group">
+                  <div class="col span_1_of_4">
+                    <header>
+                      <h3>PYTHON</h3>
+                    </header>
+                    <img src="static/images/python.jpg" style="width:50%" />
+                    <p style="margin-bottom:-20px;">SUBJECT CODE: CODE1</p>
+                    <form action="{{url_for('attendence_percentage_python_teacher')}}", method="post">
+                    <input type="submit" class="button medium style1 pie" value="View Attendence" />
+                      </form>
+                  </div>
+                  <div class="col span_1_of_4">
+                    <header>
+                      <h3>JAVA</h3>
+                    </header>
+                    <img src="static/images/java.jpg" style="width:50%" />
+                    <p style="margin-bottom:-20px;">SUBJECT CODE: CODE2</p>
+                    <form action="{{url_for('attendence_percentage_java_teacher')}}", method="post">
+                    <input type="submit" class="button medium style1 pie" value="View Attendence"  />
+                    </form>
+                  </div>
+                  <div class="col span_1_of_4">
+                    <header>
+                      <h3>JAVASCRIPT</h3>
+                    </header>
+                    <img src="static/images/javascript.jpg" style="width:50%" />
+                    <p style="margin-bottom:-20px;">SUBJECT CODE: CODE3</p>
+                    <form action="{{url_for('attendence_percentage_javascript_teacher')}}", method="post">
+                    <input type="submit" class="button medium style1 pie" value="View Attendence" />
+                    </form>
+                  </div>
+                  <div class="col span_1_of_4">
+                    <header>
+                      <h3>R</h3>
+                    </header>
+                    <img src="static/images/c++.jpg" style="width:50%" />
+                    <p style="margin-bottom:-20px;">SUBJECT CODE:CODE4</p>
+                    <form action="{{url_for('attendence_percentage_r_teacher')}}", method="post">
+                    <input type="submit" class="button medium style1 pie" value="View Attendence" />
+                    </form>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <div class="clear" style="height:60px"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endblock %}

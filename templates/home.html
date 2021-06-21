@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <!-- Change for better search engine indexing -->
+    <title>Web Site</title>
+    <meta name="title" content="Web site" />
+    <meta name="description" content="Your Web site description here" />
+    <meta name="keywords" content="Your Web site keywords here" />
+    <meta name="subject" content="Your Web Site subject here" />
+    <meta name="copyright" content="Your company or organization" />
+    <meta name="robots" content="All" />
+    <meta name="abstract" content="Site description here" />
+    <meta name="MSSmartTagsPreventParsing" content="true" />
+    <link id="theme" rel="stylesheet" type="text/css" href="static/css/style.css" title="theme" />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto+Condensed:300|Roboto+Condensed|Roboto+Condensed:300|Roboto+Condensed:300|Roboto+Condensed:300|Roboto+Condensed:300" type="text/css" />
+	<script type="text/javascript" language="javascript" src="static/js/jquery-1.8.1.min.js"></script>
+	<script type="text/javascript" language="javascript" src="static/js/scripts.js"></script>
+	<script type="text/javascript" language="javascript" src="static/js/theme.js"></script>
+	<script type="text/javascript" language="javascript" src="static/js/custom.js"></script>
+    <!-- Add your custom script here -->
+
+    {% block style %}
+    {% endblock %}
+  </head>
+
+  <body>
+    <header>
+      <div id="top">
+        <div class="bg"></div>
+        <div class="row">
+          <div id="logo" ></div>
+          <nav>
+            {% block menu %}
+            <div id="hmenu">
+              <ul>
+                <li>
+            <a href="#">Home</a>
+                </li>
+                <li>
+                   <a href="#"></a>
+
+                </li>
+                <li>
+                  <a href="#"></a>
+                </li>
+                <li>
+                  <a href="#"></a>
+                </li>
+
+                <li >
+                   <a href="{{url_for('logout')}}">Logout</a>
+                </li>
+
+              </ul>
+
+            </div>
+
+            {% endblock %}
+          </nav>
+          <div class="clear"></div>
+        </div>
+      </div>
+      <div id="header-wrapper" style="background-image:url('static/images/header-wrapper-bg.jpg')">
+        <div class="bg"></div>
+        <div class="row">
+          <div id="header">
+            <div id="tagline">
+              <h1>MVJ COLLEGE OF ENGINEERING, BENGALURU</h1>
+             <a href="https://en.wikipedia.org/wiki/MVJ_College_of_Engineering" target="_blank"> <input type="button" class="cta pie" value="SEE MORE.." /> </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    {% block content %}
+    <div id="wrapper">
+      <div class="bg"></div>
+      <div class="row">
+        <div id="container">
+          <div id="page" class="home">
+            <div id="main">
+              <section class="home">
+                <div class="group">
+                  <div class="col span_1_of_4">
+                    <header>
+                      <h3>PYTHON</h3>
+                    </header>
+                    <img src="static/images/python.jpg" style="width:50%" />
+                    <p style="margin-bottom:-20px;">Subject Code: Code1</p>
+                    <form action="{{url_for('attendence_percentage_python')}}", method="post">
+                    <input type="submit" class="button medium style1 pie" value="View Attendence" />
+                      </form>
+                  </div>
+                  <div class="col span_1_of_4">
+                    <header>
+                      <h3>JAVA</h3>
+                    </header>
+                    <img src="static/images/java.jpg" style="width:50%" />
+                    <p style="margin-bottom:-20px;">Subject Code: Code1</p>
+                    <form action="{{url_for('attendence_percentage_java')}}", method="post">
+                    <input type="submit" class="button medium style1 pie" value="View Attendence"  />
+                    </form>
+                  </div>
+                  <div class="col span_1_of_4">
+                    <header>
+                      <h3>JAVASCRIPT</h3>
+                    </header>
+                    <img src="static/images/javascript.jpg" style="width:50%" />
+                    <p style="margin-bottom:-20px;">Subject Code: Code1</p>
+                    <form action="{{url_for('attendence_percentage_javascript')}}", method="post">
+                    <input type="submit" class="button medium style1 pie" value="View Attendence" />
+                    </form>
+                  </div>
+                  <div class="col span_1_of_4">
+                    <header>
+                      <h3>R</h3>
+                    </header>
+                    <img src="static/images/c++.jpg" style="width:50%" />
+                    <p style="margin-bottom:-20px;">Subject Code: Code1</p>
+                    <form action="{{url_for('attendence_percentage_r')}}", method="post">
+                    <input type="submit" class="button medium style1 pie" value="View Attendence" />
+                    </form>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <div class="clear" style="height:60px"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+    {% block footer %}
+    <footer id="footer" style="margin-top:-150px;" >
+      <div class="bg"></div>
+      <div class="content">
+        <div class="group">
+
+
+
+        </div>
+        <div class="clear"></div>
+        <div class="baseline">
+          <div style="float:left;margin-top:7px">
+
+          </div>
+          <ul class="social-links" style="float:right">
+            <li>
+              <a href="#" rel="nofollow" style="background-image:url('static/images/facebook.png')" title="Be a fan on Facebook"></a>
+            </li>
+            <li>
+              <a href="#" rel="nofollow" style="background-image:url('static/images/twitter.png')" title="Follow us on Twitter"></a>
+            </li>
+            <li>
+              <a href="#" style="background-image:url('static/images/googleplus.png')" title="Circle us on Google+"></a>
+            </li>
+            <li>
+              <a href="#" rel="nofollow" style="background-image:url('static/images/rss.png')" title="RSS Feed"></a>
+            </li>
+          </ul>
+          <div class="clear"></div>
+        </div>
+      </div>
+    </footer>
+  {% endblock %}
+  </body>
+</html>
